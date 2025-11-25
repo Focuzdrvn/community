@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { TeamSection } from "@/components/TeamSection";
 
 const stats = [
   {
@@ -92,6 +94,7 @@ const resourceHighlights = [
 const navLinks = [
   { label: "Events", href: "#events" },
   { label: "Values", href: "#values" },
+  { label: "Team", href: "#team" },
   { label: "Resources", href: "#resources" },
   { label: "Join", href: "#join" },
 ];
@@ -157,6 +160,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <TeamSection />
 
         <section id="resources" className="space-y-8 animate-fade-up animate-delay-600">
           <SectionHeading
@@ -255,12 +260,13 @@ function Header() {
   return (
     <header className="surface-glass flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-white/10 px-6 py-5">
       <div className="flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-white/20 text-lg font-black tracking-[0.3em]">
-          FD
-        </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.45em] text-muted-foreground">community</p>
-          <p className="text-lg font-semibold text-white">Focuzdrvn</p>
+        <div className="relative h-12 w-32">
+          <Image
+            src="/logo.png"
+            alt="Focuzdrvn Logo"
+            fill
+            className="object-contain"
+          />
         </div>
       </div>
 
